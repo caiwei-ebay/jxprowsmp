@@ -38,7 +38,7 @@ pipeline {
         sh "echo \$(jx-release-version) > VERSION"
         sh "mvn versions:set -DnewVersion=\$(cat VERSION) -s ./settings.xml"
         sh "jx step tag --version \$(cat VERSION)"
-        sh "mvn clean deploy -s ./settings.xml"
+        sh "mvn clean install -s ./settings.xml"
         sh "skaffold version"
         sh "export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml"
         sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
