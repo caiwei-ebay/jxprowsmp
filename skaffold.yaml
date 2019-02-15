@@ -7,7 +7,7 @@ build:
     docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/caiwei-ebay/jxprowsmp:{{.VERSION}}'
+      template: '{{.DOCKER_REGISTRY}}/caiweiebay/jxprowsmp:{{.VERSION}}'
   local: {}
 deploy:
   kubectl: {}
@@ -18,7 +18,7 @@ profiles:
     - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/caiwei-ebay/jxprowsmp:{{.DIGEST_HEX}}'
+        template: '{{.DOCKER_REGISTRY}}/caiweiebay/jxprowsmp:{{.DIGEST_HEX}}'
     local: {}
   deploy:
     helm:
@@ -26,5 +26,5 @@ profiles:
       - name: jxprowsmp
         chartPath: charts/jxprowsmp
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/caiwei-ebay/jxprowsmp'
+          image.repository: '{{.DOCKER_REGISTRY}}/caiweiebay/jxprowsmp'
           image.tag: '{{.DIGEST_HEX}}'
