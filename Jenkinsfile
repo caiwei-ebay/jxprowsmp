@@ -3,7 +3,7 @@ pipeline {
   environment {
     ORG = 'caiweiebay'
     APP_NAME = 'jxprowsmp'
-    CHART_REPOSITORY := 'http://montereyovn-2122966.slc07.dev.ebayc3.com:8082'
+    CHART_REPOSITORY = 'http://montereyovn-2122966.slc07.dev.ebayc3.com:8082'
     //CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
   }
   stages {
