@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    ORG = 'caiwei-ebay'
+    ORG = 'caiweiebay'
     APP_NAME = 'jxprowsmp'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
   }
